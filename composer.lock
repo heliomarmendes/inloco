@@ -896,16 +896,16 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.14.2",
+            "version": "v3.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8"
+                "reference": "76b776f86ba70431cd2acb174caf31cb6559c67a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
-                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/76b776f86ba70431cd2acb174caf31cb6559c67a",
+                "reference": "76b776f86ba70431cd2acb174caf31cb6559c67a",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2024-11-09T16:13:13+00:00"
+            "time": "2025-01-11T22:02:34+00:00"
         },
         {
             "name": "laravel/framework",
@@ -1718,12 +1718,12 @@
             "version": "2.72.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
+                "url": "https://github.com/CarbonPHP/carbon.git",
                 "reference": "afd46589c216118ecd48ff2b95d77596af1e57ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/afd46589c216118ecd48ff2b95d77596af1e57ed",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/afd46589c216118ecd48ff2b95d77596af1e57ed",
                 "reference": "afd46589c216118ecd48ff2b95d77596af1e57ed",
                 "shasum": ""
             },

@@ -4,12 +4,27 @@
 
 @section('content_header')
 <h1 class="m-0 text-dark"><i class="fas fa-home"></i> Início
-    <small class="text-muted">- Bem-vindo ao sistema do Curso Flexpeak</small>
+    <small class="text-muted">- Bem-vindo ao sistema INNOVATIVE</small>
 </h1>
 @stop
 
+
+
 @section('content')
-    <div class="row">
-        
-    </div>
+
+
+
+
+
+
 @stop
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<link rel="stylediv" href="public/css/custom.css">
+
+
+

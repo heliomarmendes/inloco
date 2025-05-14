@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FuncionariosController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\LocacoesController;
+use App\Http\Controllers\CargosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,7 @@ Route::middleware('auth')->group(function() {
     Route::post('cargos.edit/{cargo}', [CargosController::class, 'update']);
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
