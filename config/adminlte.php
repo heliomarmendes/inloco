@@ -348,6 +348,12 @@ return [
                     'icon' => 'far fa-fw fa-file',
                     'label_color' => '',
                 ],
+                [
+                    'text' => 'Centro de Custo',
+                    'url' => '/custos.index',
+                    'icon' => 'fa fa-sitemap',
+                    'label_color' => '',
+                ],
             ],
         ],
         ['header' => 'account_settings'],

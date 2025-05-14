@@ -5,6 +5,7 @@ use App\Http\Controllers\FuncionariosController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\LocacoesController;
 use App\Http\Controllers\CargosController;
+use App\Http\Controllers\CentroCustosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,10 @@ Route::middleware('auth')->group(function() {
     Route::post('cargos.create', [CargosController::class, 'store']);
     Route::get('cargos.edit/{cargo}', [CargosController::class, 'edit']);
     Route::post('cargos.edit/{cargo}', [CargosController::class, 'update']);
+
+    Route::get('custos.index', [CentroCustosController::class, 'index']);
+    Route::get('custos.create', [CentroCustosController::class, 'create']);
+    Route::post('custos.create', [CentroCustosController::class, 'store']);
 
 });
 
