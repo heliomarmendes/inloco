@@ -4,27 +4,30 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
-class Cargos extends Model
+class Alimentacoes extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $table = 'cargos';
-    protected $fillable = ['nome','salario', 'insalubridade', 'transporte', 'refeicao'];
-
+    protected $table = 'alimentacoes';
+    protected $dates = ['created_at', 'update_at', 'data_alimentacao'];
+    
 
     public function funcionario()
     {
-        return $this->hasMany(Funcionario::class);
+        return $this->belongsTo(Funcionarios::class);
     }
 
     public function holerite()
     {
         return $this->hasMany(Holerites::class);
     }
+
     
 
 
 }
+
 

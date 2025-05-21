@@ -47,12 +47,12 @@
                             <a href="/clientes.edit/{{ $cliente->id }}" class="btn btn-primary btn-sm">Editar</a>
                         </td>
                         <td class="text-center">{{ $cliente->nome }}</td>
-                        <td class="text-center">{{ $cliente->cnpj }}</td>
-                        <td class="text-center">{{ $cliente->telefone }}</td>
+                        <td id="cnpj" class="text-center">{{ $cliente->cnpj }}</td>
+                        <td id="phone_with_ddd" class="text-center">{{ $cliente->telefone }}</td>
                         <td class="text-center">{{ $cliente->bairro }}</td>
                         <td class="text-center">{{ $cliente->endereco }}</td>
                         <td class="text-center">{{ $cliente->cidade }}</td>
-                        <td class="text-center">{{ $cliente->uf }}</td>
+                        <td id="uf" class="text-center">{{ $cliente->uf }}</td>
                         <td class="text-center">{{ $cliente->status_formatado }}</td>
                     </tr>
                 @endforeach

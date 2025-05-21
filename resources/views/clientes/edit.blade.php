@@ -58,12 +58,12 @@
             
             <div class="form-group">
                 <label for="cnpj">CNPJ</label>
-                <input type="char" name="cnpj" placeholder="Digite o CNPJ do cliente" class="form-control" value="{{ isset($cliente) ? $cliente->cnpj : '' }}">
+                <input id="cnpj" type="char" name="cnpj" placeholder="Digite o CNPJ do cliente" class="form-control" value="{{ isset($cliente) ? $cliente->cnpj : '' }}">
             </div>
 
             <div class="form-group">
                 <label for="telefone">Telefone</label>
-                <input type="char" name="telefone" placeholder="Digite o telefone do cliente" class="form-control" value="{{ isset($cliente) ? $cliente->telefone : '' }}">
+                <input id="phone_with_ddd" type="char" name="telefone" placeholder="Digite o telefone do cliente" class="form-control" value="{{ isset($cliente) ? $cliente->telefone : '' }}">
             </div>
 
             <div class="form-group">
@@ -83,12 +83,12 @@
 
             <div class="form-group">
                 <label for="uf">Estado</label>
-                <input type="text" name="uf" placeholder="Insira o estado - UF" class="form-control" value="{{ isset($cliente) ? $cliente->uf : '' }}">
+                <input id="uf" type="text" name="uf" placeholder="Insira o estado - UF" class="form-control" value="{{ isset($cliente) ? $cliente->uf : '' }}">
             </div>
 
             <div class="form-group">
                 <label for="cep">CEP</label>
-                <input type="char" name="cep" placeholder="Insira o CEP" class="form-control" value="{{ isset($cliente) ? $cliente->cep : '' }}">
+                <input id="cep" type="char" name="cep" placeholder="Insira o CEP" class="form-control" value="{{ isset($cliente) ? $cliente->cep : '' }}">
             </div>
 
             <div class="form-group">

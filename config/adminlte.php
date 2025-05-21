@@ -326,13 +326,24 @@ return [
             'submenu' => [
                 [
                     'text' => 'Funcionários',
-                    'url' => 'funcionarios/index',
+                    'url' => 'funcionarios.index',
                     'icon' => 'fa fa-users',
                     'label_color' => '',
                 ],
                 [
+                    'text' => 'Dados Bancários',
+                    'url'  => './dadosbancarios.index',
+                    'icon' => 'fa fa-fw fa-dollar-sign'
+                ],
+                [
                     'text' => 'Clientes',
                     'url' => '/clientes.index',
+                    'icon' => 'far fa-fw fa-file',
+                    'label_color' => '',
+                ],
+                [
+                    'text' => 'Locações',
+                    'url' => '/locacoes.index',
                     'icon' => 'far fa-fw fa-file',
                     'label_color' => '',
                 ],
@@ -343,12 +354,6 @@ return [
                     'label_color' => '',
                 ],
                 [
-                    'text' => 'Locações',
-                    'url' => '/locacoes.index',
-                    'icon' => 'far fa-fw fa-file',
-                    'label_color' => '',
-                ],
-                [
                     'text' => 'Centro de Custo',
                     'url' => '/custos.index',
                     'icon' => 'fa fa-sitemap',
@@ -356,6 +361,60 @@ return [
                 ],
             ],
         ],
+        ['header' => 'Descontos'],
+        [
+            'text'    => 'Lançamentos',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Vale Alimentação',
+                    'url'  => '/alimentacoes.index',
+                ],
+                [
+                    'text' => 'Adiantamentos',
+                    'url'  => '/adiantamentos.index',
+                ],
+                [
+                    'text' => 'Faltas',
+                    'url'  => '/faltas.index',
+                ],
+                [
+                    'text' => 'Atestados',
+                    'url'  => '/atestados.index',
+                ],
+                [
+                    'text' => 'INSS',
+                    'url'  => '/inss.index',
+                ],
+                //[
+                //    'text' => 'Peças',
+                //    'url'  => '/pecas.index',
+                //],
+                //[
+                //    'text' => 'Gratificações',
+                //    'url'  => '/gratificacoes.index',
+                //],
+                //[
+                //    'text' => 'H.E 50%',
+                //    'url'  => '/he50.index',
+                //],
+                //[
+                //    'text' => 'H.E 100%',
+                //    'url'  => '/he100.index',
+                //],
+            ],
+        ],
+        ['header' => 'Faturamento'],
+        [
+            'text'    => 'Folha',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Holerites',
+                    'url'  => '/holerites.index',
+                ],
+            ],
+        ],        
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -367,44 +426,44 @@ return [
             'url' => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
+        //[
+        //    'text' => 'multilevel',
+        //    'icon' => 'fas fa-fw fa-share',
+        //    'submenu' => [
+        //        [
+        //            'text' => 'level_one',
+        //            'url' => '#',
+        //        ],
+        //        [
+        //            'text' => 'level_one',
+        //            'url' => '#',
+        //            'submenu' => [
+        //                [
+        //                    'text' => 'level_two',
+        //                    'url' => '#',
+        //                ],
+        //                [
+        //                    'text' => 'level_two',
+        //                    'url' => '#',
+        //                    'submenu' => [
+        //                        [
+        //                            'text' => 'level_three',
+        //                            'url' => '#',
+        //                        ],
+        //                        [
+        //                            'text' => 'level_three',
+        //                            'url' => '#',
+        //                        ],
+        //                    ],
+        //                ],
+        //            ],
+        //        ],
+        //        [
+        //            'text' => 'level_one',
+        //            'url' => '#',
+        //        ],
+        //    ],
+        //],
         ['header' => 'labels'],
         [
             'text' => 'important',

@@ -28,6 +28,6 @@ class CreateCentroCustos extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('centrocustos');
+        Schema::dropIfExists('');
     }
 }

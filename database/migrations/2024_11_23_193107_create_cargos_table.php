@@ -16,10 +16,10 @@ class CreateCargosTable extends Migration
         Schema::create('cargos', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->char('salario')->default(0);
-            $table->char('transporte')->default(0);
-            $table->char('refeicao')->default(0);
-            $table->char('insalubridade')->default(0);
+            $table->float('salario')->default(0);
+            $table->float('transporte')->default(0);
+            $table->float('refeicao')->default(0);
+            $table->float('insalubridade')->default(0);
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateCargosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cargos');
+        Schema::dropIfExists('');
     }
 }

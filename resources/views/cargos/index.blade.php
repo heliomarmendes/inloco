@@ -43,11 +43,11 @@
                     <td>
                         <a href="/cargos.edit/{{ $cargo->id }}" class="btn btn-primary btn-sm">Editar</a>
                     </td>
-                    <td>{{$cargo->nome}}</td>
-                    <td>{{$cargo->salario}}</td>
-                    <td>{{$cargo->insalubridade}}</td>
-                    <td>{{$cargo->refeicao}}</td>
-                    <td>{{$cargo->transporte}}</td>
+                    <td>R${{$cargo->nome}}</td>
+                    <td>R${{$cargo->salario}}</td>
+                    <td>R${{$cargo->insalubridade}}</td>
+                    <td>R${{$cargo->refeicao}}</td>
+                    <td>R${{$cargo->transporte}}</td>
                 </tr>
             @endforeach
         </tbody>

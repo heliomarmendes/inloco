@@ -6,6 +6,13 @@ use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\LocacoesController;
 use App\Http\Controllers\CargosController;
 use App\Http\Controllers\CentroCustosController;
+use App\Http\Controllers\DadosBancariosController;
+use App\Http\Controllers\AlimentacoesController;
+use App\Http\Controllers\AdiantamentosController;
+use App\Http\Controllers\FaltasController;
+use App\Http\Controllers\AtestadosController;
+use App\Http\Controllers\InssController;
+use App\Http\Controllers\HoleritesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +55,48 @@ Route::middleware('auth')->group(function() {
     Route::get('custos.index', [CentroCustosController::class, 'index']);
     Route::get('custos.create', [CentroCustosController::class, 'create']);
     Route::post('custos.create', [CentroCustosController::class, 'store']);
+
+    Route::get('funcionarios.index', [FuncionariosController::class, 'index']);
+    Route::get('funcionarios.create', [FuncionariosController::class, 'create']);
+    Route::post('funcionarios.create', [FuncionariosController::class, 'store']);
+    Route::get('funcionarios.edit/{cargo}', [FuncionariosController::class, 'edit']);
+    Route::post('funcionarios.edit/{cargo}', [FuncionariosController::class, 'update']);
+
+    Route::get('dadosbancarios.index', [DadosBancariosController::class, 'index']);
+    Route::get('dadosbancarios.create', [DadosBancariosController::class, 'create']);
+    Route::post('dadosbancarios.create', [DadosBancariosController::class, 'store']);
+    Route::get('dadosbancarios.edit/{cargo}', [DadosBancariosController::class, 'edit']);
+    Route::post('dadosbancarios.edit/{cargo}', [DadosBancariosController::class, 'update']);
+
+    Route::get('alimentacoes.index', [AlimentacoesController::class, 'index']);
+    Route::get('alimentacoes.create', [AlimentacoesController::class, 'create']);
+    Route::post('alimentacoes.create', [AlimentacoesController::class, 'store']);
+    Route::delete('alimentacoes/{alimentacao}', [AlimentacoesController::class, 'delete']);
+
+    Route::get('adiantamentos.index', [AdiantamentosController::class, 'index']);
+    Route::get('adiantamentos.create', [AdiantamentosController::class, 'create']);
+    Route::post('adiantamentos.create',[AdiantamentosController::class, 'store']);
+    Route::delete('adiantamentos/{adiantamento}', [AdiantamentosController::class, 'delete']);
+
+    Route::get('faltas.index', [FaltasController::class, 'index']);
+    Route::get('faltas.create', [FaltasController::class, 'create']);
+    Route::post('faltas.create', [FaltasController::class, 'store']);
+    Route::delete('faltas/{falta}', [FaltasController::class, 'delete']);   
+
+    Route::get('atestados.index', [AtestadosController::class, 'index']);
+    Route::get('atestados.create', [AtestadosController::class, 'create']);
+    Route::post('atestados.create', [AtestadosController::class, 'store']);
+    Route::delete('atestados/{atestado}', [AtestadosController::class, 'delete']);
+
+    Route::get('inss.index', [InssController::class, 'index']);
+    Route::get('inss.create', [InssController::class, 'create']);
+    Route::post('inss.create', [InssController::class, 'store']);
+    Route::delete('inss/{inss}', [InssController::class, 'delete']);   
+
+    Route::get('holerites.index', [HoleritesController::class, 'index']);
+    Route::get('holerites.listanormal/', [HoleritesController::class, 'listanormal']);
+    Route::get('holerites.individual/{id}',[HoleritesController::class, 'pdf']);
+    Route::get('holerites.lista/',[HoleritesController::class, 'pdflista']);
 
 });
 
