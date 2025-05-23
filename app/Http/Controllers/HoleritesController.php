@@ -45,19 +45,19 @@ public function listanormal(Request $request)
     ]);
 }
 
-public function pdf($funcionario)
+public function pdf($funcionarios)
 {
-    $funcionario = Funcionarios::findOrFail($funcionario);
+    $funcionarios = Funcionarios::findOrFail($funcionarios);
 
     return \PDF::loadView('holerites.individual', [
-                        'funcionarios' => $funcionario])
+                        'funcionarios' => $funcionarios])
                 ->setPaper('a4')
                 ->stream('holerites.pdf');
 }
 
 public function pdflista(Request $request)
 {
-    $funcionarios = Funcionarios::all();
+    $funcionario = Funcionarios::all();
 
     return \PDF::loadView('holerites.lista', ['funcionarios' => Funcionarios::where('status', Funcionarios::STATUS_ATIVO)
                 ->orderBy('nome', 'asc')

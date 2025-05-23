@@ -84,89 +84,46 @@
           </tr>
 
           <tr>
-            <th>Adic. Per.</th>
+            <th>Vale Transporte</th>
             <th></th>
             <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getpericulosidade(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
+            <td>R$ {{ number_format($funcionarios->cargo->transporte 
+              - $funcionarios->getTransporteAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
           </tr>
 
           <tr>
             <th>Alimentação</th>
             <th></th>
             <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getAlimentacao(\Request::get('data_inicio'), \Request::get('data_fim'))
-                    - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
+            <td>R$ {{ number_format($funcionarios->cargo->refeicao
+              - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
           </tr>
 
           <tr>
-            <th>Ajuda de Custo</th>
+            <th>Insalubridade</th>
             <th></th>
             <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getAjudaCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                    - $funcionarios->getAjudaAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
-          </tr>
-
-          <tr>
-            <th>Aux de Dados</th> <!--vale transporte virou aux de dados-->
-            <th></th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->cargo->aux_de_dados, 2, ",", "." ) }}</td>
-          </tr>
-
-          <tr>
-            <th>Aluguel Moto</th>
-            <th></th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getAluguelCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-              - $funcionarios->getAluguelAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
-          </tr>
-
-          <tr>
-            <th>Gratificação</th>
-            <th></th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getGratificacoes(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
-          </tr>
-
-          <tr>
-            <th>Horas Exp</th>
-            <th>-</th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getBoletas(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
+            <td>R$ {{ number_format($funcionarios->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
           </tr>
 
           <tr>
             <th>H.E 50%</th>
-            <th>{{ number_format($funcionarios->getHorasHE50(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ":", ":") }}</th>
+            <th>{{ number_format($funcionarios->getHorasHE50(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ":", ":") }}h</th>
             <th>=</th>
             <td>R$ {{ number_format($funcionarios->getHE50(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
-          </tr>
-
-          <<tr>
-            <th>H.E 100%</th>
-            <th>{{ number_format($funcionarios->getHorasHE100(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ":", ":") }}</th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getHE100(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</td>
           </tr>
 
           <tr>
             <th>Total Bruto</th>
             <th>***********</th>
             <th>=</th>
-            <th>R$ {{ number_format($funcionarios->getSalario(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getAlimentacao(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getHE100(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getHE50(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getGratificacoes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                + $funcionarios->getTransportes(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getAjudaCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                + $funcionarios->getBoletas(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getPericulosidade(\Request::get('data_inicio'), \Request::get('data_fim'))
-                + $funcionarios->cargo->aux_de_dados
-                + $funcionarios->getAluguelCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAluguelAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAjudaAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</th>
+            <th>R$ {{ number_format($funcionarios->getSalario(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionarios->cargo->transporte 
+                            - $funcionarios->getTransporteAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionarios->cargo->refeicao
+                            - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionarios->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionarios->getHE50(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</th>
           </tr>
 
           <br>
@@ -179,24 +136,10 @@
           </tr>
 
           <tr>
-            <th>INSS/Sindicato</th>
-            <th>{{ $funcionarios->getPorcentagemInss(\Request::get('data_inicio'), \Request::get('data_fim')) }}</th>
+            <th>INSS</th>
+            <th>{{ $funcionarios->getPorcentagemInss(\Request::get('data_inicio'), \Request::get('data_fim')) }}%</th>
             <th>=</th>
             <td>R$ {{ number_format($funcionarios->getInss(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
-          </tr>
-
-          <tr>
-            <th>Gasolina</th>
-            <th>-</th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getGasolina(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
-          </tr>
-
-          <tr>
-            <th>Peças</th>
-            <th>-</th>
-            <th>=</th>
-            <td>R$ {{ number_format($funcionarios->getPecas(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
           </tr>
 
           <tr>
@@ -212,8 +155,6 @@
             <th>=</th>
             <th>R$  {{ number_format($funcionarios->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim')) 
                 + $funcionarios->getInss(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getGasolina(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getPecas(\Request::get('data_inicio'), \Request::get('data_fim')) 
                 + $funcionarios->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</th>
           </tr>
 
@@ -223,25 +164,16 @@
             <th>Total Líquido</th>
             <th>***********</th>
             <th>=</th>
-            <th>R$ {{ number_format($funcionarios->getSalario(\Request::get('data_inicio'), \Request::get('data_fim'))
-                + $funcionarios->getPericulosidade(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getAlimentacao(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getAjudaCusto(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getTransportes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                + $funcionarios->getBoletas(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getHE100(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getHE50(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->getGratificacoes(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                + $funcionarios->cargo->aux_de_dados
-                + $funcionarios->getAluguelCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAluguelAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getInss(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                - $funcionarios->getPecas(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                - $funcionarios->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                - $funcionarios->getGasolina(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                - $funcionarios->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                - $funcionarios->getAjudaAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</th>
+            <th>R${{ number_format($funcionarios->getSalario(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     + $funcionarios->cargo->transporte 
+                     - $funcionarios->getTransporteAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     + $funcionarios->cargo->refeicao
+                     - $funcionarios->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     + $funcionarios->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     + $funcionarios->getHE50(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     - $funcionarios->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     - $funcionarios->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
+                     - $funcionarios->getInss(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}</th>
           </tr>
         </table>
 

@@ -13,6 +13,7 @@ use App\Http\Controllers\FaltasController;
 use App\Http\Controllers\AtestadosController;
 use App\Http\Controllers\InssController;
 use App\Http\Controllers\HoleritesController;
+use App\Http\Controllers\HE50Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +98,12 @@ Route::middleware('auth')->group(function() {
     Route::get('holerites.listanormal/', [HoleritesController::class, 'listanormal']);
     Route::get('holerites.individual/{id}',[HoleritesController::class, 'pdf']);
     Route::get('holerites.lista/',[HoleritesController::class, 'pdflista']);
+
+    Route::get('he50.index', [HE50Controller::class, 'index']);
+    Route::get('he50.create', [HE50Controller::class, 'create']);
+    Route::post('he50.create', [HE50Controller::class, 'store']);
+    Route::delete('he50/{HE50}', [HE50Controller::class, 'delete']);   
+
 
 });
 

@@ -4,7 +4,7 @@
 
 @section('content_header')
 <h1 class="m-0 text-dark"><i class="fas fa-home"></i> Início
-    <small class="text-muted">- Bem-vindo ao sistema INNOVATIVE</small>
+    <small class="text-muted">- Bem-vindo ao sistema INLOCO</small>
 </h1>
 @stop
 

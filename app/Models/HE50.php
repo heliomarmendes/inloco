@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Funcionarios;
+use Carbon\Carbon;
 
-class DadosBancarios extends Model
+class HE50 extends Model
 {
     use HasFactory;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
-    protected $table = 'dadosbancarios';
-    protected $dates = ['created_at', 'update_at'];
+    protected $table = 'he50';
+    protected $dates = ['created_at', 'update_at', 'data_he50'];
     
 
     public function funcionario()
@@ -24,7 +24,6 @@ class DadosBancarios extends Model
     {
         return $this->hasMany(Holerites::class);
     }
-
     
 
 

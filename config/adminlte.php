@@ -386,18 +386,10 @@ return [
                     'text' => 'INSS',
                     'url'  => '/inss.index',
                 ],
-                //[
-                //    'text' => 'Peças',
-                //    'url'  => '/pecas.index',
-                //],
-                //[
-                //    'text' => 'Gratificações',
-                //    'url'  => '/gratificacoes.index',
-                //],
-                //[
-                //    'text' => 'H.E 50%',
-                //    'url'  => '/he50.index',
-                //],
+                [
+                    'text' => 'H.E 50%',
+                    'url'  => '/he50.index',
+                ],
                 //[
                 //    'text' => 'H.E 100%',
                 //    'url'  => '/he100.index',
@@ -422,8 +414,8 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
+            'text' => 'Novo acesso',
+            'url' => 'register',
             'icon' => 'fas fa-fw fa-lock',
         ],
         //[

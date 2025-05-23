@@ -98,10 +98,20 @@
                         <td>R${{ $funcionario->cargo->refeicao
                             - $funcionario->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>   
                         <td>R${{ $funcionario->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>    
-                        <td>0</td>
+                        <td>R${{ $funcionario->getHE50(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>
                         <td>R${{ $funcionario->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>
                         <td>R${{ $funcionario->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td> 
                         <td>R${{ $funcionario->getInss(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>
+                        <td>R${{ $funcionario->getSalario(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->cargo->transporte 
+                            - $funcionario->getTransporteAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->cargo->refeicao
+                            - $funcionario->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->getHE50(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getInss(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>
                     </tr>
                 @endforeach
             </tbody>

@@ -19,13 +19,13 @@ public function index()
 {
     $funcionario = Funcionarios::all(); 
 
-    //$dadosBancarios = DadosBancarios::all();
+    $dadosBancarios = DadosBancarios::all();
 
     return view('funcionarios.index', [
         'funcionarios' => Funcionarios::where('status', Funcionarios::STATUS_ATIVO)
                                     ->orderBy('nome', 'asc')
                                     ->get(),
-        //'dadosBancarios' => $dadosBancarios
+        'dadosBancarios' => $dadosBancarios
     ]);
 }
 
@@ -37,7 +37,7 @@ public function create()
 
     $locacao = Locacoes::all();
 
-    //$dadosBancarios = DadosBancarios::all();
+    $dadosBancarios = DadosBancarios::all();
 
     $centrocusto = CentroCustos::all();
 
@@ -45,7 +45,7 @@ public function create()
         'funcionarios' => $funcionario,
         'cargos' => $cargo,
         'locacoes' => $locacao,
-        //'dadosBancarios' => $dadosBancarios,
+        'dadosBancarios' => $dadosBancarios,
         'centrocustos' => $centrocusto
     ]);
 }

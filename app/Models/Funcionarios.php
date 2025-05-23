@@ -224,6 +224,36 @@ class Funcionarios extends Model
         
     }
 
+    public function getPix($data_inicio, $data_fim)
+    {
+        $pix = DadosBancarios::where('funcionario_id', $this->id)
+                   ->when($data_fim, function($query) use ($data_fim) {
+                    $query->where('created_at', '<=', $data_fim);
+                   })
+                   ->sum('pix');
+
+           if ($pix > 0) {
+                return $pix;
+            } 
+           return 'Sem registro';
+        
+    }
+
+    public function getBanco($data_inicio, $data_fim)
+    {
+        $banco = DadosBancarios::where('funcionario_id', $this->id)
+                   ->when($data_fim, function($query) use ($data_fim) {
+                    $query->where('created_at', '<=', $data_fim);
+                   })
+                   ->sum('banco');
+
+           if ($banco > 0 ) {
+                return $banco;
+            } 
+           return 'Sem registro';
+        
+    }
+
     public function getConta($data_inicio, $data_fim)
     {
         $conta = DadosBancarios::where('funcionario_id', $this->id)
@@ -266,6 +296,30 @@ class Funcionarios extends Model
         }
 
         return 0;
+    }
+
+    public function getHE50($data_inicio, $data_fim)
+    {
+        return HE50::where('funcionario_id', $this->id)
+            ->when($data_inicio, function($query) use ($data_inicio) {
+                $query->where('data_he50', '>=', $data_inicio);
+            })
+            ->when($data_fim, function($query) use ($data_fim) {
+                $query->where('data_he50', '<=', $data_fim);
+            })
+            ->sum('valor');
+    }
+
+    public function getHorasHE50($data_inicio, $data_fim)
+    {
+        return HE50::where('funcionario_id', $this->id)
+            ->when($data_inicio, function($query) use ($data_inicio) {
+                $query->where('data_he50', '>=', $data_inicio);
+            })
+            ->when($data_fim, function($query) use ($data_fim) {
+                $query->where('data_he50', '<=', $data_fim);
+            })
+            ->sum('horas');
     }
 
     

@@ -30,11 +30,7 @@
                 <tr class="text-center">
                     <th>Nome</th>
                     <th>Valor</th>
-                    <th>C Desconto</th>
-                    <th>Agência</th>
-                    <th>Conta</th>
                     <th>Pix</th>
-                    <th>Banco</th>
                     <th>Centro de Custo</th>
                 </tr>
             </thead>
@@ -43,50 +39,18 @@
                 @foreach ($funcionarios as $funcionario)
                     <tr class="text-center">
                         <td>{{ $funcionario->nome }}</td>
-                        <td>R$ {{ number_format($funcionario->getSalario(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                                + $funcionario->getAjudaCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getAluguelCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getAlimentacao(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->cargo->aux_de_dados
-                                + $funcionario->getPericulosidade(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getBoletas(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                                + $funcionario->getGratificacoes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getTransportes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getHE50(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getHE100(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getGasolina(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getInss(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getPecas(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAjudaAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAluguelAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", ".") }}
-                        </td>      
-                        <td>R$ {{ number_format($funcionario->getSalario(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                                + $funcionario->getAjudaCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getAlimentacao(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->cargo->aux_de_dados
-                                + $funcionario->getPericulosidade(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getBoletas(\Request::get('data_inicio'), \Request::get('data_fim')) 
-                                + $funcionario->getGratificacoes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getTransportes(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getHE50(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getHE100(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                + $funcionario->getAluguelCusto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getGasolina(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getInss(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getPecas(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getDesconto(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAjudaAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
-                                - $funcionario->getAluguelAtestado(\Request::get('data_inicio'), \Request::get('data_fim')), 2, ",", "." ) }}</td>
-                        <td>{{ $funcionario->dadosbancarios->agencia }}</td>     
-                        <td>{{ $funcionario->dadosbancarios->conta }}</td>
-                        <td>{{ $funcionario->dadosbancarios->pix }}</td>
-                        <td>{{ $funcionario->dadosbancarios->banco }}</td>
+                        <td>R$ R${{ $funcionario->getSalario(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->cargo->transporte 
+                            - $funcionario->getTransporteAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->cargo->refeicao
+                            - $funcionario->getAlimentacaoAtestado(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->getInsalubridade(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            + $funcionario->getHE50(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getAdiantamentos(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getFaltas(\Request::get('data_inicio'), \Request::get('data_fim'))
+                            - $funcionario->getInss(\Request::get('data_inicio'), \Request::get('data_fim')) }}
+                        </td>
+                        <td>{{ $funcionario->getPix(\Request::get('data_inicio'), \Request::get('data_fim')) }}</td>
                         <td>{{ $funcionario->centrocusto->nome }}</td>
                     </tr>
                 @endforeach
