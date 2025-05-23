@@ -11,7 +11,7 @@
             
     <div class="row">
         <div id="container" class="col-md-12">
-            <img src="./imagem/innovativelog.png" alt="" height="100" width="140">
+            <img src="./imagem/INLOCO.png" alt="" height="100" width="140">
         </div>
     </div>
 
