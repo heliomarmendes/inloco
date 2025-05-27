@@ -26,9 +26,6 @@ use App\Http\Controllers\HE50Controller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
