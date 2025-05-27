@@ -390,10 +390,6 @@ return [
                     'text' => 'H.E 50%',
                     'url'  => '/he50.index',
                 ],
-                //[
-                //    'text' => 'H.E 100%',
-                //    'url'  => '/he100.index',
-                //],
             ],
         ],
         ['header' => 'Faturamento'],
@@ -407,17 +403,17 @@ return [
                 ],
             ],
         ],        
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Novo acesso',
-            'url' => 'register',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
+        //['header' => 'account_settings'],
+        //[
+        //    'text' => 'profile',
+        //    'url' => 'admin/settings',
+        //    'icon' => 'fas fa-fw fa-user',
+        //],
+        //[
+        //    'text' => 'Novo acesso',
+        //    'url' => 'register',
+        //    'icon' => 'fas fa-fw fa-lock',
+        //],
         //[
         //    'text' => 'multilevel',
         //    'icon' => 'fas fa-fw fa-share',
@@ -456,22 +452,22 @@ return [
         //        ],
         //    ],
         //],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
-        ],
+        //['header' => 'labels'],
+        //[
+        //    'text' => 'important',
+        //    'icon_color' => 'red',
+        //    'url' => '#',
+        //],
+        //[
+        //    'text' => 'warning',
+        //    'icon_color' => 'yellow',
+        //    'url' => '#',
+        //],
+        //[
+        //    'text' => 'information',
+        //    'icon_color' => 'cyan',
+        //    'url' => '#',
+        //],
     ],
 
     /*
