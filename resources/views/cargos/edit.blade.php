@@ -46,7 +46,7 @@
 
         @if (isset($cargos))
             <form action="/cargos.edit/{{ $cargos->id }}" method="POST" enctype="multipart/form-data">
-            @method('PUT')
+            @method('POST')
                 @else
                     <form action="/cargos.edit" method="POST" enctype="multipart/form-data">
         @endif
@@ -68,12 +68,12 @@
 
             <div class="form-group">
                 <label for="refeicao">Refeição</label>
-                <input id="money3 "type="char" name="refeicao" placeholder="Digite o valor da refeição" class="form-control" value="{{ isset($cargos) ? $cargos->refeicao : '' }}">
+                <input id="money3" type="char" name="refeicao" placeholder="Digite o valor da refeição" class="form-control" value="{{ isset($cargos) ? $cargos->refeicao : '' }}">
             </div>
 
             <div class="form-group">
                 <label for="transporte">Transporte</label>
-                <input od="money4" type="char" name="transporte" placeholder="Digite o valor do transporte" class="form-control" value="{{ isset($cargos) ? $cargos->transporte : '' }}">
+                <input id="money4" type="char" name="transporte" placeholder="Digite o valor do transporte" class="form-control" value="{{ isset($cargos) ? $cargos->transporte : '' }}">
             </div>
 
             <button type="submit" class="btn btn-primary">Salvar</button>
