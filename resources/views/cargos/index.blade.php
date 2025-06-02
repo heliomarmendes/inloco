@@ -44,10 +44,17 @@
                         <a href="/cargos.edit/{{ $cargo->id }}" class="btn btn-primary btn-sm">Editar</a>
                     </td>
                     <td>{{$cargo->nome}}</td>
+<<<<<<< HEAD
                     <td>R$ {{ number_format(($cargo->salario), 2, ",", ".") }}</td>
                     <td>R$ {{ number_format(($cargo->insalubridade), 2, ",", ".") }}</td>
                     <td>R$ {{ number_format(($cargo->refeicao), 2, ",", ".") }}</td>
                     <td>R$ {{ number_format(($cargo->transporte), 2, ",", ".") }}</td>
+=======
+                    <td>R${{$cargo->salario}}</td>
+                    <td>R${{$cargo->insalubridade}}</td>
+                    <td>R${{$cargo->refeicao}}</td>
+                    <td>R${{$cargo->transporte}}</td>
+>>>>>>> e001d1a26f71a4b602fa652d09ed5c193203eabc
                 </tr>
             @endforeach
         </tbody>

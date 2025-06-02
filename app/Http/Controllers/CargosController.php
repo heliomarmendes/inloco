@@ -41,22 +41,22 @@ class CargosController extends Controller
         return redirect()->back()->with('mensagem', 'Registro criado com sucesso!');
     }
     
-    public function edit($cargo)
+    public function edit($cargos)
     {
-        $cargo = Cargos::findOrFail($cargo);
+        $cargos = Cargos::findOrFail($cargos);
         
         return view('cargos.edit', [
-            'cargos' => $cargo
+            'cargos' => $cargos
         ]);
     }
     
-    public function update($cargo, CargosRequest $request)
+    public function update($cargos, CargosRequest $request)
     {
-        $cargo = Cargos::findOrFail($cargo);
+        $cargos = Cargos::findOrFail($cargos);
         
         $dados = $request->all();
     
-        $cargo->update($dados);
+        $cargos->update($dados);
         
         return redirect()->back()->with('mensagem', 'Registro atualizado com sucesso!');
     }

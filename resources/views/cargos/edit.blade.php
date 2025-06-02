@@ -58,7 +58,7 @@
             
             <div class="form-group">
                 <label for="salario">Salário</label>
-                <input id="money5" type="char" name="salario" placeholder="Digite o salário" class="form-control" value="{{ isset($cargos) ? $cargos->salario : '' }}">
+                <input id="money" type="char" name="salario" placeholder="Digite o salário" class="form-control" value="{{ isset($cargos) ? $cargos->salario : '' }}">
             </div>
 
             <div class="form-group">
