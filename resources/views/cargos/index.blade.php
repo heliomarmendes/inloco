@@ -43,7 +43,7 @@
                     <td>
                         <a href="/cargos.edit/{{ $cargo->id }}" class="btn btn-primary btn-sm">Editar</a>
                     </td>
-                    <td>R${{$cargo->nome}}</td>
+                    <td>{{$cargo->nome}}</td>
                     <td>R${{$cargo->salario}}</td>
                     <td>R${{$cargo->insalubridade}}</td>
                     <td>R${{$cargo->refeicao}}</td>
